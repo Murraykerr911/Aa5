@@ -1,0 +1,175 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #0f0f0f;
+    color: #ffffff;
+}
+
+/* 🔝 TOP BAR */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1c1c1e;
+    padding: 10px 15px;
+    border-bottom: 1px solid #2c2c2e;
+}
+
+.top-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.money {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.energy {
+    font-size: 14px;
+    color: #ff453a;
+}
+
+.top-center {
+    text-align: center;
+}
+
+.level {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.week {
+    font-size: 12px;
+    color: #aaa;
+}
+
+.end-week {
+    background: #34c759;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+/* 📱 SCREENS */
+.screen {
+    display: none;
+    padding: 15px;
+    padding-bottom: 80px;
+}
+
+.screen.active {
+    display: block;
+}
+
+/* 🧱 CARDS */
+.card {
+    background: #1c1c1e;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+
+/* 🧩 SECTIONS */
+.section {
+    margin-bottom: 15px;
+}
+
+.section-title {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 8px;
+    margin-left: 5px;
+}
+
+/* 🔘 MENU LIST */
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.menu-item {
+    background: #1c1c1e;
+    padding: 16px;
+    border-radius: 12px;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 🎵 ICON ROW */
+.icons-row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    background: #2c2c2e;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 📊 PROFILE */
+.profile-card {
+    background: #1c1c1e;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.profile-card h1 {
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.profile-card h2 {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+/* 🔻 NAV BAR */
+.nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #1c1c1e;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    border-top: 1px solid #2c2c2e;
+}
+
+.nav button {
+    background: none;
+    border: none;
+    color: #aaa;
+    font-size: 20px;
+}
+
+.nav button:active {
+    color: #ffffff;
+}
+
+/* 🟢 BUTTONS */
+button {
+    cursor: pointer;
+}
+
+button:active {
+    opacity: 0.8;
+}
