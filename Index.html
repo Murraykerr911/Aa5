@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Star Empire</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- 🔝 TOP BAR -->
+<div class="top-bar">
+    <div class="top-left">
+        <div class="money">£1,000</div>
+        <div class="energy">⚡ 100</div>
+    </div>
+
+    <div class="top-center">
+        <div class="level">LVL.1</div>
+        <div class="week">Week 1, 2026</div>
+    </div>
+
+    <div class="top-right">
+        <button class="end-week" onclick="endWeek()">END WEEK</button>
+    </div>
+</div>
+
+<!-- 🏠 HOME SCREEN -->
+<div id="home" class="screen active">
+    <h2>HOME</h2>
+
+    <div class="card">Career Overview</div>
+    <div class="card">Activity Feed</div>
+    <div class="card">Opportunities</div>
+</div>
+
+<!-- 🎤 MUSIC SCREEN -->
+<div id="music" class="screen">
+    <h2>MUSIC</h2>
+
+    <div class="section">
+        <div class="section-title">SNAPSHOT</div>
+        <div class="card icons-row">
+            <div class="icon">▶️</div>
+            <div class="icon">🎧</div>
+            <div class="icon">🎵</div>
+            <div class="icon">🟢</div>
+        </div>
+    </div>
+
+    <div class="menu">
+        <div class="menu-item" onclick="openPage('albums')">ALBUMS ➜</div>
+        <div class="menu-item" onclick="openPage('songs')">SONGS ➜</div>
+        <div class="menu-item">AWARDS ➜</div>
+        <div class="menu-item">CERTIFICATIONS ➜</div>
+        <div class="menu-item">FESTIVALS ➜</div>
+        <div class="menu-item">LABEL ➜</div>
+        <div class="menu-item">MERCH ➜</div>
+        <div class="menu-item">STUDIO ➜</div>
+    </div>
+</div>
+
+<!-- 🎬 ACTING SCREEN -->
+<div id="acting" class="screen">
+    <h2>ACTING & MEDIA</h2>
+
+    <div class="section">
+        <div class="section-title">MEDIA</div>
+        <div class="card icons-row">
+            <div class="icon">🎬</div>
+            <div class="icon">📺</div>
+            <div class="icon">🎥</div>
+            <div class="icon">📄</div>
+        </div>
+    </div>
+
+    <div class="menu">
+        <div class="menu-item">AUDITIONS ➜</div>
+        <div class="menu-item">BOOKINGS ➜</div>
+        <div class="menu-item">RELEASES ➜</div>
+        <div class="menu-item">SYNDICATION ➜</div>
+    </div>
+
+    <div class="section-title">ACTING & AGENCY</div>
+
+    <div class="menu">
+        <div class="menu-item">ACTING LESSONS ➜</div>
+        <div class="menu-item">ACTOR'S UNION ➜</div>
+        <div class="menu-item">TALENT AGENTS ➜</div>
+    </div>
+</div>
+
+<!-- 📊 PROFILE SCREEN -->
+<div id="profile" class="screen">
+    <h2>PROFILE</h2>
+
+    <div class="profile-card">
+        <h1>Your Name</h1>
+        <p>Musician & Actor</p>
+        <h2>£1,000 Net Worth</h2>
+    </div>
+
+    <div class="menu">
+        <div class="menu-item">Age: 18</div>
+        <div class="menu-item">Albums: 0</div>
+        <div class="menu-item">Movies: 0</div>
+        <div class="menu-item">Awards: 0</div>
+    </div>
+</div>
+
+<!-- ⚙️ SETTINGS -->
+<div id="settings" class="screen">
+    <h2>SETTINGS</h2>
+    <div class="card">Dark Mode: ON</div>
+</div>
+
+<!-- 📄 SUB PAGES (HIDDEN FOR NOW) -->
+
+<div id="songs" class="screen">
+    <h2>SONGS</h2>
+    <button onclick="createSong()">+ CREATE SONG</button>
+    <div id="songsList"></div>
+</div>
+
+<div id="albums" class="screen">
+    <h2>ALBUMS</h2>
+    <p>No albums yet</p>
+</div>
+
+<!-- 🔻 BOTTOM NAV -->
+<div class="nav">
+    <button onclick="showScreen('home')">🏠</button>
+    <button onclick="showScreen('music')">🎤</button>
+    <button onclick="showScreen('acting')">🎬</button>
+    <button onclick="showScreen('profile')">📊</button>
+    <button onclick="showScreen('settings')">⚙️</button>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
