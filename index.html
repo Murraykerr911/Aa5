@@ -13,14 +13,23 @@
     <!-- CHARACTER CREATOR -->
 <div id="characterPopup" class="popup">
 
-    <div class="popup-content">
-        <h2>Create Your Character</h2>
+    <div class="popup-box">
 
-        <input 
-            type="text" 
-            id="nameInput" 
+        <h1>Create Character</h1>
+
+        <input
+            type="text"
+            id="nameInput"
             placeholder="Enter your name"
         >
+
+        <button class="start-btn" onclick="saveCharacter()">
+            Start Career
+        </button>
+
+    </div>
+
+</div>
 
         <button onclick="saveCharacter()">
             START CAREER
