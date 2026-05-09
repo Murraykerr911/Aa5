@@ -58,14 +58,11 @@ function createSong() {
 // 🚀 START GAME
 updateUI();
 
-// CHARACTER CREATOR
-
 function saveCharacter() {
 
     let playerName = document.getElementById("nameInput").value;
 
     if (playerName.trim() === "") {
-        alert("Please enter a name");
         return;
     }
 
