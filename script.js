@@ -1,3 +1,9 @@
+let week = 1;
+let year = 2026;
+
+let weeklyProfit = 0;
+let weeklyLoss = 0;
+
 let player = {};
 
 // 🔢 GAME DATA
