@@ -125,3 +125,7 @@ function saveCharacter() {
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("startCareerBtn").addEventListener("click", startCareer);
 });
+
+document.getElementById("closeWeekBtn").addEventListener("click", function () {
+    document.getElementById("weekPopup").style.display = "none";
+});
