@@ -1,3 +1,5 @@
+let player = {};
+
 // 🔢 GAME DATA
 let money = 1000;
 let energy = 100;
@@ -58,6 +60,19 @@ function createSong() {
 // 🚀 START GAME
 updateUI();
 
+function startCareer() {
+    document.getElementById("mainMenu").style.display = "none";
+    document.getElementById("careerScreen").style.display = "block";
+
+    player = {
+        name: document.getElementById("nameInput").value,
+        cash: 100,
+        fame: 0,
+        level: 1
+    };
+
+    localStorage.setItem("playerData", JSON.stringify(player));
+}
 function saveCharacter() {
 
     let playerName = document.getElementById("nameInput").value;
@@ -70,3 +85,8 @@ function saveCharacter() {
 
     document.getElementById("characterPopup").style.display = "none";
 }
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("startCareerBtn").addEventListener("click", startCareer);
+});
