@@ -26,12 +26,41 @@ function openPage(pageId) {
     showScreen(pageId);
 }
 
-// 📅 END WEEK SYSTEM
 function endWeek() {
     week++;
+
+    // YEAR SYSTEM (52 weeks = new year)
+    if (week > 52) {
+        week = 1;
+        year++;
+    }
+
+    // income & loss system
+    let profit = Math.floor(Math.random() * 80) + (player.level * 10);
+    let loss = Math.floor(Math.random() * 40);
+
+    player.cash += (profit - loss);
+
+    weeklyProfit = profit;
+    weeklyLoss = loss;
+
+    // reset energy
     energy = 100;
 
+    // update UI
     updateUI();
+
+    // show popup
+    document.getElementById("profitLossText").innerText =
+        weeklyLoss + " | " + weeklyProfit;
+
+    document.getElementById("weekPopup").style.display = "flex";
+
+    // update week display if it exists
+    if (document.getElementById("weekDisplay")) {
+        document.getElementById("weekDisplay").innerText =
+            "Week " + week + ", " + year;
+    }
 }
 
 // 🔄 UPDATE UI VALUES
