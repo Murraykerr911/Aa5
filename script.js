@@ -104,10 +104,20 @@ function endWeek() {
 
     if (popup) {
 
-        document.getElementById("profitLossText")
-            .innerText =
-            "-£" + weeklyLoss +
-            " | +£" + weeklyProfit;
+   document.getElementById("profitLossText")
+    .innerHTML =
+
+    `
+    <span style="color:#7ef0c3">
+        +£${weeklyProfit}
+    </span>
+
+    |
+
+    <span style="color:#ff7b9c">
+        -£${weeklyLoss}
+    </span>
+    `;
 
         popup.style.display = "flex";
     }
