@@ -110,17 +110,19 @@ function startCareer() {
 }
 function saveCharacter() {
 
-    let playerName = document.getElementById("nameInput").value;
+    const input = document.getElementById("nameInput");
+
+    const playerName = input.value;
 
     if (playerName.trim() === "") {
+        alert("Enter a name");
         return;
     }
 
-    document.getElementById("playerName").innerText = playerName;
+    document.getElementById("playerName").textContent = playerName;
 
     document.getElementById("characterPopup").style.display = "none";
 }
-
 
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("startCareerBtn").addEventListener("click", startCareer);
