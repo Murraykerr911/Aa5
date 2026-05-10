@@ -169,14 +169,52 @@
     <button onclick="showScreen('settings')">⚙️</button>
 </div>
 
-    <div id="weekPopup" style="display:none;">
-    <div class="popupBox">
-        <h2>Week Summary</h2>
+<!-- WEEK SUMMARY -->
 
-        <p id="profitLossText">0 | 0</p>
+<div id="weekPopup" class="week-popup">
 
-        <button id="closeWeekBtn">Close</button>
+    <div class="week-summary">
+
+        <div class="summary-top">
+
+            <button id="closeWeekBtn" class="back-btn">
+                ←
+            </button>
+
+            <div class="summary-energy">
+                ⚡ 100
+            </div>
+
+        </div>
+
+        <h1>SUMMARY</h1>
+
+        <div class="income-section">
+
+            <div class="income-title">
+                INCOME + EXPENSES
+            </div>
+
+            <div id="profitLossText" class="income-values">
+                £0 | £0
+            </div>
+
+        </div>
+
+        <div class="feed-section">
+
+            <div class="feed-title">
+                FEED
+            </div>
+
+            <div class="feed-item">
+                💡 Songs continue earning streams weekly
+            </div>
+
+        </div>
+
     </div>
+
 </div>
     
 <script src="script.js"></script>
