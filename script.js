@@ -1,133 +1,238 @@
+// =======================
+// 🎮 STAR EMPIRE DATA
+// =======================
+
+let money = 1000;
+let energy = 100;
+
 let week = 1;
 let year = 2026;
+
+let level = 1;
 
 let weeklyProfit = 0;
 let weeklyLoss = 0;
 
-let player = {};
+// 👤 PLAYER
+let player = {
+    name: "Unnamed Star",
+    fame: 0
+};
 
-// 🔢 GAME DATA
-let money = 1000;
-let energy = 100;
-let week = 1;
-let level = 1;
+// =======================
+// 🔄 UPDATE UI
+// =======================
 
-// 🎮 NAVIGATION (SWITCH SCREENS)
-function showScreen(screenId) {
-    document.querySelectorAll('.screen').forEach(screen => {
-        screen.classList.remove('active');
-    });
+function updateUI() {
 
-    document.getElementById(screenId).classList.add('active');
+    // MONEY
+    document.querySelector(".money").innerText =
+        "£" + money;
+
+    // ENERGY
+    document.querySelector(".energy").innerText =
+        "⚡ " + energy;
+
+    // WEEK
+    document.querySelector(".week").innerText =
+        "Week " + week + ", " + year;
+
+    // LEVEL
+    document.querySelector(".level").innerText =
+        "LVL." + level;
+
+    // PLAYER NAME
+    document.getElementById("playerName").innerText =
+        player.name;
 }
 
-// 📄 OPEN SUB PAGES (LIKE SONGS / ALBUMS)
+// =======================
+// 📱 SCREEN NAVIGATION
+// =======================
+
+function showScreen(screenId) {
+
+    document.querySelectorAll(".screen").forEach(screen => {
+        screen.classList.remove("active");
+    });
+
+    document.getElementById(screenId)
+        .classList.add("active");
+}
+
+// =======================
+// 📄 OPEN PAGE
+// =======================
+
 function openPage(pageId) {
     showScreen(pageId);
 }
 
+// =======================
+// 📅 END WEEK SYSTEM
+// =======================
+
 function endWeek() {
+
     week++;
 
-    // YEAR SYSTEM (52 weeks = new year)
+    // NEW YEAR
     if (week > 52) {
         week = 1;
         year++;
     }
 
-    // income & loss system
-    let profit = Math.floor(Math.random() * 80) + (player.level * 10);
-    let loss = Math.floor(Math.random() * 40);
-
-    player.cash += (profit - loss);
-
-    weeklyProfit = profit;
-    weeklyLoss = loss;
-
-    // reset energy
+    // RESET ENERGY
     energy = 100;
 
-    // update UI
+    // RANDOM PROFIT / LOSS
+    weeklyProfit =
+        Math.floor(Math.random() * 300) + 100;
+
+    weeklyLoss =
+        Math.floor(Math.random() * 150);
+
+    // UPDATE MONEY
+    money += (weeklyProfit - weeklyLoss);
+
+    // UPDATE UI
     updateUI();
 
-    // show popup
-    document.getElementById("profitLossText").innerText =
-        weeklyLoss + " | " + weeklyProfit;
+    // OPTIONAL POPUP
+    let popup =
+        document.getElementById("weekPopup");
 
-    document.getElementById("weekPopup").style.display = "flex";
+    if (popup) {
 
-    // update week display if it exists
-    if (document.getElementById("weekDisplay")) {
-        document.getElementById("weekDisplay").innerText =
-            "Week " + week + ", " + year;
+        document.getElementById("profitLossText")
+            .innerText =
+            "-£" + weeklyLoss +
+            " | +£" + weeklyProfit;
+
+        popup.style.display = "flex";
     }
 }
 
-// 🔄 UPDATE UI VALUES
-function updateUI() {
-    document.querySelector('.money').innerText = "£" + money;
-    document.querySelector('.energy').innerText = "⚡ " + energy;
-    document.querySelector('.week').innerText = "Week " + week + ", 2026";
-    document.querySelector('.level').innerText = "LVL." + level;
-}
+// =======================
+// 🎤 CREATE SONG
+// =======================
 
-// 🎤 CREATE SONG SYSTEM
 function createSong() {
+
+    // ENERGY CHECK
     if (energy < 10) {
+
         alert("Not enough energy");
+
         return;
     }
 
+    // USE ENERGY
     energy -= 10;
 
-    let earnings = Math.floor(Math.random() * 500) + 100;
+    // RANDOM EARNINGS
+    let earnings =
+        Math.floor(Math.random() * 500) + 100;
+
     money += earnings;
 
+    // CREATE SONG CARD
     let song = document.createElement("div");
-    song.classList.add("card");
-    song.innerText = "New Song Released • Earned £" + earnings;
 
-    document.getElementById("songsList").appendChild(song);
+    song.classList.add("card");
+
+    song.innerHTML = `
+        <strong>New Song Released</strong><br>
+        Earned £${earnings}
+    `;
+
+    document.getElementById("songsList")
+        .appendChild(song);
 
     updateUI();
 }
 
-// 🚀 START GAME
-updateUI();
+// =======================
+// 👤 CHARACTER CREATOR
+// =======================
 
-function startCareer() {
-    document.getElementById("mainMenu").style.display = "none";
-    document.getElementById("careerScreen").style.display = "block";
-
-    player = {
-        name: document.getElementById("nameInput").value,
-        cash: 100,
-        fame: 0,
-        level: 1
-    };
-
-    localStorage.setItem("playerData", JSON.stringify(player));
-}
 function saveCharacter() {
 
-    const input = document.getElementById("nameInput");
+    let input =
+        document.getElementById("nameInput");
 
-    const playerName = input.value;
+    let playerName =
+        input.value;
 
+    // EMPTY CHECK
     if (playerName.trim() === "") {
+
         alert("Enter a name");
+
         return;
     }
 
-    document.getElementById("playerName").textContent = playerName;
+    // SAVE NAME
+    player.name = playerName;
 
-    document.getElementById("characterPopup").style.display = "none";
+    // UPDATE UI
+    updateUI();
+
+    // HIDE POPUP
+    document.getElementById("characterPopup")
+        .style.display = "none";
+
+    // SAVE DATA
+    localStorage.setItem(
+        "starEmpirePlayer",
+        JSON.stringify(player)
+    );
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("startCareerBtn").addEventListener("click", startCareer);
-});
+// =======================
+// 💾 LOAD SAVE
+// =======================
 
-document.getElementById("closeWeekBtn").addEventListener("click", function () {
-    document.getElementById("weekPopup").style.display = "none";
-});
+function loadGame() {
+
+    let savedPlayer =
+        localStorage.getItem("starEmpirePlayer");
+
+    if (savedPlayer) {
+
+        player =
+            JSON.parse(savedPlayer);
+
+        document.getElementById("characterPopup")
+            .style.display = "none";
+    }
+
+    updateUI();
+}
+
+// =======================
+// ❌ CLOSE WEEK POPUP
+// =======================
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        let closeBtn =
+            document.getElementById("closeWeekBtn");
+
+        if (closeBtn) {
+
+            closeBtn.addEventListener(
+                "click",
+                function () {
+
+                    document.getElementById("weekPopup")
+                        .style.display = "none";
+                }
+            );
+        }
+
+        loadGame();
+    }
+);
