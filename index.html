@@ -169,43 +169,124 @@
     <button onclick="showScreen('settings')">⚙️</button>
 </div>
 
-<!-- WEEK SUMMARY -->
+/* =========================
+   📅 WEEK SUMMARY
+========================= */
 
-<div id="weekPopup" class="week-popup">
+.week-popup {
 
-    <div class="week-summary">
+    position: fixed;
 
-        <div class="summary-top">
+    top: 0;
+    left: 0;
 
-            <button id="closeWeekBtn" class="back-btn">
-                ←
-            </button>
+    width: 100%;
+    height: 100%;
 
-            <div class="summary-energy">
-                ⚡ 100
-            </div>
+    background: #1f1f22;
 
-        </div>
+    display: none;
 
-        <h1>SUMMARY</h1>
+    z-index: 99999;
+}
 
-        <div class="income-section">
+.week-summary {
 
-            <div class="income-title">
-                INCOME + EXPENSES
-            </div>
+    width: 100%;
+    height: 100%;
 
-            <div id="profitLossText" class="income-values">
-                £0 | £0
-            </div>
+    padding: 25px;
 
-        </div>
+    color: white;
 
-        <div class="feed-section">
+    overflow-y: auto;
+}
 
-            <div class="feed-title">
-                FEED
-            </div>
+.summary-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 60px;
+}
+
+.back-btn {
+
+    background: none;
+
+    border: none;
+
+    color: white;
+
+    font-size: 34px;
+}
+
+.summary-energy {
+
+    color: #ff5c5c;
+
+    font-size: 22px;
+
+    font-weight: bold;
+}
+
+.week-summary h1 {
+
+    text-align: right;
+
+    font-size: 70px;
+
+    color: #8d8898;
+
+    margin-bottom: 140px;
+}
+
+.income-section {
+
+    text-align: center;
+
+    margin-bottom: 60px;
+}
+
+.income-title {
+
+    color: #8d8898;
+
+    font-size: 24px;
+
+    margin-bottom: 20px;
+}
+
+.income-values {
+
+    font-size: 42px;
+
+    font-weight: bold;
+}
+
+.feed-section {
+
+    text-align: center;
+}
+
+.feed-title {
+
+    color: #8d8898;
+
+    font-size: 24px;
+
+    margin-bottom: 20px;
+}
+
+.feed-item {
+
+    font-size: 24px;
+
+    line-height: 1.6;
+}
 
             <div class="feed-item">
                 💡 Songs continue earning streams weekly
