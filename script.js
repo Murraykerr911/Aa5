@@ -89,46 +89,44 @@ function endWeek() {
     // RESET ENERGY
     energy = 100;
 
-    // 💰 REAL WEEKLY INCOME
+    // 💰 WEEKLY INCOME
+    weeklyProfit =
+        weeklySalary +
+        songIncome;
 
-weeklyProfit =
-    weeklySalary +
-    songIncome;
+    // 💸 WEEKLY EXPENSES
+    weeklyLoss =
+        expenses;
 
-// 💸 REAL WEEKLY EXPENSES
-
-weeklyLoss =
-    expenses;
-    
     // UPDATE MONEY
     money += (weeklyProfit - weeklyLoss);
 
-    // UPDATE UI
-    updateUI();
-
-    // OPTIONAL POPUP
+    // POPUP
     let popup =
         document.getElementById("weekPopup");
 
     if (popup) {
 
-   document.getElementById("profitLossText")
-    .innerHTML =
+        document.getElementById("profitLossText")
+        .innerHTML =
 
-    `
-    <span style="color:#7ef0c3">
-        +£${weeklyProfit}
-    </span>
+        `
+        Salary: +£${weeklySalary}<br>
+        Song Income: +£${songIncome}<br>
+        Expenses: -£${weeklyLoss}<br><br>
 
-    |
-
-    <span style="color:#ff7b9c">
-        -£${weeklyLoss}
-    </span>
-    `;
+        <strong>
+        Total: £${weeklyProfit - weeklyLoss}
+        </strong>
+        `;
 
         popup.style.display = "flex";
     }
+
+    // RESET SONG INCOME
+    songIncome = 0;
+
+    updateUI();
 }
 
 // =======================
