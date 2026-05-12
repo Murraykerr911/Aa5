@@ -485,3 +485,61 @@ button:active {
 
     letter-spacing: 1px;
 }
+
+/* 🔥 FINAL SUMMARY HEADER FIX */
+
+.summary-header {
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    justify-content: space-between !important;
+
+    width: 100% !important;
+
+    margin-bottom: 120px !important;
+}
+
+.close-summary-btn {
+
+    width: 34px !important;
+    height: 34px !important;
+
+    border-radius: 50% !important;
+
+    border: none !important;
+
+    background: #ff5c5c !important;
+
+    color: white !important;
+
+    font-size: 14px !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+}
+
+.summary-header h1 {
+
+    margin: 0 !important;
+
+    font-size: 42px !important;
+
+    color: #8d8898 !important;
+
+    letter-spacing: 1px !important;
+}
+
+.summary-energy {
+
+    color: #ff5c5c !important;
+
+    font-size: 16px !important;
+
+    font-weight: bold !important;
+}
+
