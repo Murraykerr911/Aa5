@@ -89,37 +89,38 @@ function endWeek() {
     // RESET ENERGY
     energy = 100;
 
-    // 💰 WEEKLY INCOME
+    // CALCULATE PROFITS
     weeklyProfit =
-        weeklySalary +
-        songIncome;
+        weeklySalary + songIncome;
 
-    // 💸 WEEKLY EXPENSES
     weeklyLoss =
         expenses;
 
     // UPDATE MONEY
     money += (weeklyProfit - weeklyLoss);
 
-    // POPUP
+    // UPDATE SUMMARY TEXT
+    let summary =
+        document.getElementById("profitLossText");
+
+    if (summary) {
+
+        summary.innerHTML = `
+            Salary: +£${weeklySalary}<br>
+            Song Income: +£${songIncome}<br>
+            Expenses: -£${weeklyLoss}<br><br>
+
+            <strong>
+                Total: £${weeklyProfit - weeklyLoss}
+            </strong>
+        `;
+    }
+
+    // SHOW POPUP
     let popup =
         document.getElementById("weekPopup");
 
     if (popup) {
-
-        document.getElementById("profitLossText")
-        .innerHTML =
-
-        `
-        Salary: +£${weeklySalary}<br>
-        Song Income: +£${songIncome}<br>
-        Expenses: -£${weeklyLoss}<br><br>
-
-        <strong>
-        Total: £${weeklyProfit - weeklyLoss}
-        </strong>
-        `;
-
         popup.style.display = "flex";
     }
 
