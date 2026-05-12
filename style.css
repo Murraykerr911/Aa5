@@ -337,16 +337,18 @@ button:active {
 
 .income-title {
 
-    color: #8f8b9b;
+    color: #8d8898;
 
-    font-size: 20px;
+    font-size: 12px;
 
-    margin-bottom: 15px;
+    margin-bottom: 12px;
+
+    letter-spacing: 1px;
 }
 
 .income-values {
 
-    font-size: 40px;
+    font-size: 22px;
     font-weight: bold;
 
     color: #7ef0c3;
@@ -359,16 +361,22 @@ button:active {
 
 .feed-title {
 
-    color: #8f8b9b;
+    color: #8d8898;
 
-    font-size: 22px;
+    font-size: 12px;
 
-    margin-bottom: 20px;
+    margin-bottom: 16px;
+
+    letter-spacing: 1px;
 }
 
 .feed-item {
 
-    font-size: 22px;
+    font-size: 14px;
 
     line-height: 1.5;
+
+    max-width: 260px;
+
+    margin: 0 auto;
 }
