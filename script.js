@@ -13,6 +13,10 @@ let level = 1;
 let weeklyProfit = 0;
 let weeklyLoss = 0;
 
+let weeklySalary = 100;
+let songIncome = 0;
+let expenses = 0;
+
 // 👤 PLAYER
 let player = {
     name: "Unnamed Star",
@@ -85,13 +89,17 @@ function endWeek() {
     // RESET ENERGY
     energy = 100;
 
-    // RANDOM PROFIT / LOSS
-    weeklyProfit =
-        Math.floor(Math.random() * 300) + 100;
+    // 💰 REAL WEEKLY INCOME
 
-    weeklyLoss =
-        Math.floor(Math.random() * 150);
+weeklyProfit =
+    weeklySalary +
+    songIncome;
 
+// 💸 REAL WEEKLY EXPENSES
+
+weeklyLoss =
+    expenses;
+    
     // UPDATE MONEY
     money += (weeklyProfit - weeklyLoss);
 
