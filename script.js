@@ -100,16 +100,26 @@ function endWeek() {
     money += (weeklyProfit - weeklyLoss);
 
     // UPDATE SUMMARY
-    document.getElementById("profitLossText")
-    .innerHTML = `
-        Salary: +£${weeklySalary}<br>
-        Song Income: +£${songIncome}<br>
-        Expenses: -£${weeklyLoss}<br><br>
+document.getElementById("profitLossText")
+.innerHTML = `
 
-        <strong>
-            Total: £${weeklyProfit - weeklyLoss}
-        </strong>
-    `;
+    <div class="summary-line">
+        Salary: +£${weeklySalary}
+    </div>
+
+    <div class="summary-line">
+        Song Income: +£${songIncome}
+    </div>
+
+    <div class="summary-line">
+        Expenses: -£${weeklyLoss}
+    </div>
+
+    <div class="summary-total">
+        Total: £${weeklyProfit - weeklyLoss}
+    </div>
+
+`;
 
     // SHOW POPUP
     document.getElementById("weekPopup")
