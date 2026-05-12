@@ -262,15 +262,13 @@ button:active {
 ========================= */
 
 .week-popup {
+
     position: fixed;
     inset: 0;
 
-    background: rgba(0,0,0,0.9);
+    background: #1f1f22;
 
     display: none;
-
-    justify-content: center;
-    align-items: center;
 
     z-index: 9999;
 }
@@ -280,161 +278,12 @@ button:active {
     width: 100%;
     height: 100%;
 
-    background: #1f1f22;
-
     padding: 25px;
 
     color: white;
 }
 
-.summary-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    margin-bottom: 30px;
-}
-
-.back-btn {
-
-    background: none;
-    border: none;
-
-    color: white;
-
-    font-size: 30px;
-}
-
-.summary-energy {
-
-    color: #ff5c5c;
-
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.week-summary h1 {
-
-    text-align: center;
-
-    font-size: 44px;
-
-    color: #8d8898;
-
-    margin-top: 40px;
-
-    margin-bottom: 100px;
-
-    letter-spacing: 1px;
-}
-
-.income-section {
-
-    text-align: center;
-
-    margin-bottom: 50px;
-}
-
-.income-title {
-
-    color: #8d8898;
-
-    font-size: 12px;
-
-    margin-bottom: 12px;
-
-    letter-spacing: 1px;
-}
-
-.income-values {
-
-    font-size: 22px;
-    font-weight: bold;
-
-    color: #7ef0c3;
-}
-
-.feed-section {
-
-    text-align: center;
-}
-
-.feed-title {
-
-    color: #8d8898;
-
-    font-size: 12px;
-
-    margin-bottom: 16px;
-
-    letter-spacing: 1px;
-}
-
-.feed-item {
-
-    font-size: 14px;
-
-    line-height: 1.5;
-
-    max-width: 260px;
-
-    margin: 0 auto;
-}
-
-/* 🔥 WEEK SUMMARY FINAL FIX */
-
-.week-summary h1 {
-
-    text-align: center !important;
-
-    font-size: 44px !important;
-
-    margin-top: 40px !important;
-
-    margin-bottom: 90px !important;
-
-    color: #8d8898 !important;
-
-    letter-spacing: 1px !important;
-}
-
-.income-title {
-
-    font-size: 12px !important;
-
-    margin-bottom: 10px !important;
-
-    letter-spacing: 1px !important;
-}
-
-.income-values {
-
-    font-size: 22px !important;
-
-    font-weight: 700 !important;
-}
-
-.feed-title {
-
-    font-size: 12px !important;
-
-    margin-bottom: 14px !important;
-
-    letter-spacing: 1px !important;
-}
-
-.feed-item {
-
-    font-size: 14px !important;
-
-    line-height: 1.5 !important;
-
-    max-width: 260px !important;
-
-    margin: 0 auto !important;
-}
-
-/* 🔥 SUMMARY HEADER */
+/* HEADER */
 
 .summary-header {
 
@@ -444,15 +293,13 @@ button:active {
 
     justify-content: space-between;
 
-    margin-bottom: 90px;
+    margin-bottom: 100px;
 }
-
-/* ❌ CLOSE BUTTON */
 
 .close-summary-btn {
 
-    width: 42px;
-    height: 42px;
+    width: 38px;
+    height: 38px;
 
     border-radius: 50%;
 
@@ -465,81 +312,117 @@ button:active {
     font-size: 18px;
 
     font-weight: bold;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
 }
-
-/* SUMMARY TITLE */
 
 .summary-header h1 {
 
-    font-size: 42px !important;
-
-    margin: 0 !important;
+    font-size: 42px;
 
     color: #8d8898;
 
     letter-spacing: 1px;
 }
 
-/* 🔥 FINAL SUMMARY HEADER FIX */
-
-.summary-header {
-
-    display: flex !important;
-
-    align-items: center !important;
-
-    justify-content: space-between !important;
-
-    width: 100% !important;
-
-    margin-bottom: 120px !important;
-}
-
-.close-summary-btn {
-
-    width: 34px !important;
-    height: 34px !important;
-
-    border-radius: 50% !important;
-
-    border: none !important;
-
-    background: #ff5c5c !important;
-
-    color: white !important;
-
-    font-size: 14px !important;
-
-    display: flex !important;
-
-    align-items: center !important;
-
-    justify-content: center !important;
-}
-
-.summary-header h1 {
-
-    margin: 0 !important;
-
-    font-size: 42px !important;
-
-    color: #8d8898 !important;
-
-    letter-spacing: 1px !important;
-}
-
 .summary-energy {
 
-    color: #ff5c5c !important;
+    color: #ff5c5c;
 
-    font-size: 16px !important;
+    font-size: 18px;
 
-    font-weight: bold !important;
+    font-weight: bold;
 }
+
+/* INCOME */
+
+.income-section {
+
+    text-align: center;
+
+    margin-bottom: 70px;
+}
+
+.income-title {
+
+    color: #8d8898;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 18px;
+}
+
+/* BREAKDOWN */
+
+.summary-breakdown {
+
+    width: 100%;
+
+    max-width: 300px;
+
+    margin: 0 auto;
+}
+
+.summary-line {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 14px;
+
+    font-size: 18px;
+}
+
+.profit {
+
+    color: #7ef0c3;
+}
+
+.loss {
+
+    color: #ff7b9c;
+}
+
+.summary-total {
+
+    margin-top: 35px;
+
+    text-align: center;
+
+    font-size: 24px;
+
+    font-weight: bold;
+}
+
+/* FEED */
+
+.feed-section {
+
+    text-align: center;
+}
+
+.feed-title {
+
+    color: #8d8898;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 18px;
+}
+
+.feed-item {
+
+    font-size: 15px;
+
+    line-height: 1.5;
+
+    max-width: 280px;
+
+    margin: 0 auto;
+}
+
+
 
