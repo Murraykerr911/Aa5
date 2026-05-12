@@ -169,14 +169,13 @@
     <button onclick="showScreen('settings')">⚙️</button>
 </div>
 
-    <!-- 📅 WEEK SUMMARY -->
-
 <!-- 📅 WEEK SUMMARY -->
-<div id="weekPopup" class="week-popup" style="display:none;">
+
+<div id="weekPopup" class="week-popup">
 
     <div class="week-summary">
 
-        <!-- TOP BAR -->
+        <!-- HEADER -->
         <div class="summary-header">
 
             <button id="closeWeekBtn"
@@ -184,7 +183,9 @@
                 ✕
             </button>
 
-            <h1>SUMMARY</h1>
+            <div class="summary-title">
+                SUMMARY
+            </div>
 
             <div class="summary-energy">
                 ⚡ 100
@@ -192,58 +193,10 @@
 
         </div>
 
-        <!-- SUMMARY CONTENT -->
+        <!-- CONTENT -->
         <div class="summary-content">
 
-            <p id="profitLossText"></p>
-
-        </div>
-
-    </div>
-
-</div>
-        <!-- SUMMARY CONTENT -->
-        <div class="summary-content">
-
-            <p id="profitLossText"></p>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-        <!-- INCOME -->
-        <div class="income-section">
-
-            <div class="income-title">
-                INCOME + EXPENSES
-            </div>
-
- <div class="summary-breakdown">
-
-    <div id="summaryList"></div>
-
-    <div class="summary-total">
-        TOTAL: <span id="summaryTotal">+£0</span>
-    </div>
-
-</div>
-
-
-        </div>
-
-        <!-- FEED -->
-        <div class="feed-section">
-
-            <div class="feed-title">
-                FEED
-            </div>
-
-            <div class="feed-item">
-                💡 Your career is slowly growing
-            </div>
+            <div id="profitLossText"></div>
 
         </div>
 
