@@ -89,14 +89,14 @@ function endWeek() {
     // RESET ENERGY
     energy = 100;
 
-    // CALCULATE PROFITS
+    // WEEKLY MONEY
     weeklyProfit =
         weeklySalary + songIncome;
 
     weeklyLoss =
         expenses;
 
-    // UPDATE MONEY
+    // UPDATE PLAYER MONEY
     money += (weeklyProfit - weeklyLoss);
 
     // UPDATE SUMMARY TEXT
@@ -129,7 +129,6 @@ function endWeek() {
 
     updateUI();
 }
-
 // =======================
 // 🎤 CREATE SONG
 // =======================
