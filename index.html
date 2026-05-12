@@ -169,127 +169,50 @@
     <button onclick="showScreen('settings')">⚙️</button>
 </div>
 
-/* =========================
-   📅 WEEK SUMMARY
-========================= */
+    <!-- 📅 WEEK SUMMARY -->
 
-.week-popup {
+<div id="weekPopup" class="week-popup">
 
-    position: fixed;
+    <div class="week-summary">
 
-    top: 0;
-    left: 0;
+        <!-- TOP BAR -->
+        <div class="summary-top">
 
-    width: 100%;
-    height: 100%;
+            <button id="closeWeekBtn" class="back-btn">
+                ←
+            </button>
 
-    background: #1f1f22;
+            <div class="summary-energy">
+                ⚡ 100
+            </div>
 
-    display: none;
+        </div>
 
-    z-index: 99999;
-}
+        <!-- TITLE -->
+        <h1>SUMMARY</h1>
 
-.week-summary {
+        <!-- INCOME -->
+        <div class="income-section">
 
-    width: 100%;
-    height: 100%;
+            <div class="income-title">
+                INCOME + EXPENSES
+            </div>
 
-    padding: 25px;
+            <div id="profitLossText" class="income-values">
+                +£100 | -£0
+            </div>
 
-    color: white;
+        </div>
 
-    overflow-y: auto;
-}
+        <!-- FEED -->
+        <div class="feed-section">
 
-.summary-top {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    margin-bottom: 60px;
-}
-
-.back-btn {
-
-    background: none;
-
-    border: none;
-
-    color: white;
-
-    font-size: 34px;
-}
-
-.summary-energy {
-
-    color: #ff5c5c;
-
-    font-size: 22px;
-
-    font-weight: bold;
-}
-
-.week-summary h1 {
-
-    text-align: right;
-
-    font-size: 70px;
-
-    color: #8d8898;
-
-    margin-bottom: 140px;
-}
-
-.income-section {
-
-    text-align: center;
-
-    margin-bottom: 60px;
-}
-
-.income-title {
-
-    color: #8d8898;
-
-    font-size: 24px;
-
-    margin-bottom: 20px;
-}
-
-.income-values {
-
-    font-size: 42px;
-
-    font-weight: bold;
-}
-
-.feed-section {
-
-    text-align: center;
-}
-
-.feed-title {
-
-    color: #8d8898;
-
-    font-size: 24px;
-
-    margin-bottom: 20px;
-}
-
-.feed-item {
-
-    font-size: 24px;
-
-    line-height: 1.6;
-}
+            <div class="feed-title">
+                FEED
+            </div>
 
             <div class="feed-item">
-                💡 Songs continue earning streams weekly
+                💡 Your career is slowly growing
             </div>
 
         </div>
@@ -297,7 +220,7 @@
     </div>
 
 </div>
-    
+
 <script src="script.js"></script>
 
 </body>
