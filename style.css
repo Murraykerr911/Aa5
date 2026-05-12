@@ -433,3 +433,55 @@ button:active {
 
     margin: 0 auto !important;
 }
+
+/* 🔥 SUMMARY HEADER */
+
+.summary-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 90px;
+}
+
+/* ❌ CLOSE BUTTON */
+
+.close-summary-btn {
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    background: #ff5c5c;
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+/* SUMMARY TITLE */
+
+.summary-header h1 {
+
+    font-size: 42px !important;
+
+    margin: 0 !important;
+
+    color: #8d8898;
+
+    letter-spacing: 1px;
+}
